@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import landprices.fetcher
+import landprices.immobilien_scout24_fetcher
+import landprices.offer
 
-fetchers = [landprices.fetcher.ImmobilienScout24Fetcher(), landprices.fetcher.ImmonetFetcher(),
+fetchers = [landprices.immobilien_scout24_fetcher.ImmobilienScout24Fetcher(), landprices.fetcher.ImmonetFetcher(),
             landprices.fetcher.ImmoweltFetcher(), landprices.fetcher.ImmobilioFetcher()]
 offers = []
 for fetcher in fetchers:

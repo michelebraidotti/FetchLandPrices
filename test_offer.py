@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from landprices.offer import LandOffer
 
-o = LandOffer("gadsfadsf", "fasdfad", "fadfa", "fadsfa")
+o = LandOffer("gadsfadsf", "link", "title", "location", "price", "area", "date_listed")
 print(o)
-print(o.source + "\t" + o.location + "\t" + o.price + "\t" + o.date_listed)
+print(o.source + "\t" + o.link + "\t" + o.title + "\t" + o.location + "\t" + o.price + "\t" + o.area + "\t" + o.date_listed)
