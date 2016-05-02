@@ -1,6 +1,7 @@
 class LandOffer:
-    def __init__(self, source, link, title, location, price, area, date_listed):
+    def __init__(self, source, id_as_from_source, link, title, location, price, area, date_listed):
         self.source = source
+        self.id_as_from_source = id_as_from_source
         self.link = link
         self.title = title
         self.location = location
