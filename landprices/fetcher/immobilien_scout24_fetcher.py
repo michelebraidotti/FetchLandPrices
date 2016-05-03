@@ -1,6 +1,6 @@
 from urllib.error import HTTPError
+from landprices.fetcher.fetcher import AbstractFetcher
 
-from landprices.fetcher import AbstractFetcher
 from landprices.offer import LandOffer
 import urllib.request
 import re
