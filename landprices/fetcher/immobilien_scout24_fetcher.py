@@ -9,10 +9,11 @@ import time
 class ImmobilienScout24Fetcher(AbstractFetcher):
     base_url = 'http://www.immobilienscout24.de/wohnen/berlin,berlin/grundstueck-kaufen'
     next_pages = ',seite-'
+    max_n_of_pages_to_fetch = 50
 
     def fetch(self):
 
-        for page_num in list(range(1, 50)):
+        for page_num in list(range(1, self.max_n_of_pages_to_fetch)):
             url = self.base_url
             if page_num == 1:
                 url += '.html'
@@ -48,6 +49,7 @@ class ImmobilienScout24Fetcher(AbstractFetcher):
                     price_match = re.search("<div class=\"grid-item palm-one-third lap-one-third desk-one-third\">\W+<span class=\"resultlist-value\">(.+)</span>", match)
                     if price_match:
                         price = price_match.group(1)
+                        price = re.sub(" &euro;", "", price)
                     area_match = re.search(
                         "<div class=\"grid-item palm-one-third lap-one-third desk-one-third properties-padding\">\W+<span class=\"resultlist-value\">\W*(.+?)\W*<span>",
                         match)

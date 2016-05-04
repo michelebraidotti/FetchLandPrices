@@ -8,3 +8,15 @@ class LandOffer:
         self.area = area
         self.price = price
         self.date_listed = date_listed
+
+    def __key(self):
+        return self.source, self.id_as_from_source
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.__key() == other.__key()
+        else:
+            return False
+
+    def __hash__(self):
+        return hash(self.__key())
