@@ -15,4 +15,4 @@ for fetcher in fetchers:
     fetcher.fetch()
     offers += fetcher.get_results()
 for o in offers:
-    print(o.source + "\t" + o.location + "\t" + o.price + "\t" + o.date_listed)
+    print(o.source + "\t" + o.location + "\t" + o.price + "\t" + o.date_retrieved)

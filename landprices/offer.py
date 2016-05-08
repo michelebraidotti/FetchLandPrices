@@ -1,5 +1,5 @@
 class LandOffer:
-    def __init__(self, source, id_as_from_source, link, title, location, price, area, date_listed):
+    def __init__(self, source, id_as_from_source, link, title, location, price, area, date_retrieved, was_updated):
         self.source = source
         self.id_as_from_source = id_as_from_source
         self.link = link
@@ -7,10 +7,11 @@ class LandOffer:
         self.location = location
         self.area = area
         self.price = price
-        self.date_listed = date_listed
+        self.date_retrieved = date_retrieved
+        self.was_updated = was_updated
 
     def __key(self):
-        return self.source, self.id_as_from_source
+        return self.source, self.id_as_from_source, self.price
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):

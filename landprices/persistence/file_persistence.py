@@ -11,7 +11,7 @@ class FilePersistence:
     @staticmethod
     def as_offer(dct):
         return LandOffer(dct['source'], dct['id_as_from_source'], dct['link'], dct['title'], dct['location'],
-                         dct['price'], dct['area'], dct['date_listed'])
+                         dct['price'], dct['area'], dct['date_retrieved'], dct['was_updated'])
 
     def load_from_storage(self):
         offers = []
