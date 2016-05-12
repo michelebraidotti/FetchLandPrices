@@ -55,7 +55,7 @@ class ImmobilienScout24Fetcher(AbstractFetcher):
                         match)
                     if area_match:
                         area = area_match.group(1)
-                    o = LandOffer(self.get_fetcher_name(), id_from_immo24, link, title, address, price, area, time.strftime("%Y-%m-%d"))
+                    o = LandOffer(self.get_fetcher_name(), id_from_immo24, link, title, address, price, area, time.strftime("%Y-%m-%d"), False)
                     self.results.append(o)
             except HTTPError:
                 # On page not found error we exit the for loop. It means we retrieved enough pages for today.

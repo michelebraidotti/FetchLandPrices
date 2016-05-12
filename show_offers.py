@@ -4,10 +4,11 @@ from landprices.persistence.file_persistence import FilePersistence
 
 p = FilePersistence()
 offers = p.load_from_storage()
+print("source\tid_as_from_source\tlink\ttitle\tlocation\tprice\tarea\tdate_retrieved\twas_updated")
 for o in offers:
     print(
         o.source + "\t" + o.id_as_from_source + "\t" + o.link + "\t" + o.title + "\t" + o.location
-        + "\t" + o.price + "\t" + o.area + "\t" + o.date_retrieved + "\t" + o.was_updated)
+        + "\t" + o.price + "\t" + o.area + "\t" + o.date_retrieved + "\t" + str(o.was_updated))
 
 # offers_dict = []
 # for o in offers:
