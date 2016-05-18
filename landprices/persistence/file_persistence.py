@@ -13,18 +13,6 @@ class FilePersistence:
         return LandOffer(dct['source'], dct['id_as_from_source'], dct['link'], dct['title'], dct['location'],
                          dct['price'], dct['area'], dct['date_retrieved'], dct['was_updated'])
 
-    def merge_offers(self, old_offers, new_offers):
-        for old_offer in old_offers:
-            for new_offer in new_offers:
-                # todo! todo!
-                assert isinstance(new_offer, object)
-                if old_offer == new_offer:
-                    if new_offer.price == old_offer.price:
-
-
-
-
-
     def load_from_storage(self):
         offers = []
         if not exists(self.file_path):
